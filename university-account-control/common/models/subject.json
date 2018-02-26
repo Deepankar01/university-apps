@@ -1,0 +1,48 @@
+{
+  "name": "subject",
+  "plural": "subjects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "fees": {
+      "type": "number",
+      "required": true
+    },
+    "semester": {
+      "type": "number",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "courses": {
+      "type": "hasAndBelongsToMany",
+      "model": "course",
+      "foreignKey": "course_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "universities": {
+      "type": "hasOne",
+      "model": "university",
+      "foreignKey": "university_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

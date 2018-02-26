@@ -1,0 +1,58 @@
+{
+  "name": "student",
+  "plural": "students",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "yearOfJoining": {
+      "type": "date",
+      "required": true
+    },
+    "enrollmentId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "courses": {
+      "type": "hasOne",
+      "model": "course",
+      "foreignKey": "course_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "subjects": {
+      "type": "hasAndBelongsToMany",
+      "model": "subject",
+      "foreignKey": "subject_id",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    },
+    "colleges": {
+      "type": "hasOne",
+      "model": "college",
+      "foreignKey": "college_id",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,44 @@
+{
+  "name": "university",
+  "plural": "universities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "colleges": {
+      "type": "hasMany",
+      "model": "college",
+      "foreignKey": "collegeId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "college"
+    },
+    "students": {
+      "type": "hasAndBelongsToMany",
+      "model": "student",
+      "foreignKey": "student_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

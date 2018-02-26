@@ -1,0 +1,45 @@
+{
+  "name": "course",
+  "plural": "courses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "colleges": {
+      "type": "hasOne",
+      "model": "college",
+      "foreignKey": "college_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "subjects": {
+      "type": "hasMany",
+      "model": "subject",
+      "foreignKey": "subject_id",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "subject"
+    },
+    "students": {
+      "type": "hasAndBelongsToMany",
+      "model": "student",
+      "foreignKey": "student_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
