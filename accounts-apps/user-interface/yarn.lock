@@ -35,7 +35,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.11.2.tgz#59508b88ce90fe2742f7b8414c6f5db3e359570d"
   integrity sha512-XubfQDIg88PGJ7netQPf3QOKHF7Xht4WXGtg5W7cGBeQs9ETbYKwfchR9o+tRRA9iLTQ7nAre85M205JbYsjJA==
 
-"@uifabric/icons@>=6.1.1 <7.0.0":
+"@uifabric/icons@>=6.1.1 <7.0.0", "@uifabric/icons@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@uifabric/icons/-/icons-6.1.1.tgz#5185ff7c37fa4bdea44a2573c5bc16fdf5462223"
   integrity sha512-s0tQHNUYMsWU9pyMPlBY3iCWRXJyzMMbRgdW7djPFuNxaFIjMgjMIWaE6nVkvNz27btAp/h31SzL00+3wCiPwg==

@@ -19,7 +19,7 @@ export default class ErrorBoundary extends Component {
       // You can render any custom fallback UI
       return <h1>{getMessage('layout', 'errorMessage')}</h1>;
     }
-    return children;
+    return <div className="page">{children}</div>;
   }
 }
 

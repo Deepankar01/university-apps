@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@uifabric/icons": "^6.1.1",
     "axios": "^0.18.0",
     "loaders.css": "^0.1.2",
     "lodash": "^4.17.11",

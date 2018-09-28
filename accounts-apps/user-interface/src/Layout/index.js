@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router';
-import Header from '../Components/Header';
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { initializeIcons } from '@uifabric/icons';
+import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import Routes from '../routes';
 import NotFound from '../Pages/NotFound';
+import '../index.css';
 
 class Layout extends React.PureComponent {
   constructor(props) {
@@ -14,16 +17,19 @@ class Layout extends React.PureComponent {
     this.props = props;
     this.state = {};
     this.renderApp = this.renderApp.bind(this);
+    initializeIcons();
   }
 
   /* eslint-disable class-methods-use-this */
   renderApp() {
     return (
-      <Fragment>
-        <Header />
-        <Routes />
+      <Fabric>
+        <div className="app-layout">
+          <NavBar />
+          <Routes />
+        </div>
         <Footer />
-      </Fragment>
+      </Fabric>
     );
   }
   /* eslint-enable */
