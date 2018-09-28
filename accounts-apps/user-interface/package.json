@@ -62,7 +62,6 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -81,5 +80,10 @@
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
