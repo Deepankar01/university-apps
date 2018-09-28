@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getMessage } from '../../utils';
 
@@ -17,11 +17,7 @@ export default class ErrorBoundary extends Component {
     const { children } = this.props;
     if (hasError) {
       // You can render any custom fallback UI
-      return (
-        <h1>
-          {getMessage('layout', 'errorMessage')}
-        </h1>
-      );
+      return <h1>{getMessage('layout', 'errorMessage')}</h1>;
     }
     return children;
   }

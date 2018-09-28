@@ -9,6 +9,7 @@
     "moment": "^2.22.2",
     "normalize.css": "^8.0.0",
     "office-ui-fabric-react": "^6.74.1",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
@@ -18,11 +19,55 @@
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0"
   },
+  "coverageThreshold": {
+    "global": {
+      "branches": 50,
+      "functions": 50,
+      "lines": 50,
+      "statements": 50
+    },
+    "./src/**/*reducer.js": {
+      "statements": 90
+    },
+    "./src/**/*sagas.js": {
+      "statements": 90
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix .",
+      "git add ."
+    ],
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/",
+      "!**/src/stories/**",
+      "!**/src/__test__/",
+      "!**/src/components/shared-components/styled-components/**",
+      "!**/src/setupTests.js",
+      "!**/src/routes.js",
+      "!**/src/index.js",
+      "!**/src/reducers.js",
+      "!**/src/sagas.js"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ]
+  },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "react-scripts test --env=jsdom --coverage"
   },
   "devDependencies": {
     "enzyme": "^3.6.0",
@@ -33,6 +78,8 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.0.1",
+    "lint-staged": "^7.3.0",
     "prettier": "^1.14.3"
   }
 }

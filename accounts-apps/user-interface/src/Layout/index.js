@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router';
@@ -16,6 +16,7 @@ class Layout extends React.PureComponent {
     this.renderApp = this.renderApp.bind(this);
   }
 
+  /* eslint-disable class-methods-use-this */
   renderApp() {
     return (
       <Fragment>
@@ -25,6 +26,7 @@ class Layout extends React.PureComponent {
       </Fragment>
     );
   }
+  /* eslint-enable */
 
   render() {
     const { store } = this.props;
