@@ -1,2 +1,4 @@
-# university-management-system
-University Account Management System
+# University Apps
+
+Contains the following apps 
+- [x] University Account Management System
