@@ -10,6 +10,7 @@ import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import Routes from '../routes';
 import NotFound from '../Pages/NotFound';
+import Login from '../Pages/Login';
 import '../index.css';
 
 class Layout extends React.PureComponent {
@@ -42,8 +43,9 @@ class Layout extends React.PureComponent {
       <Provider store={store}>
         <Router>
           <Switch>
+            <Route exact path="/" component={this.renderApp} />
             <Route path="/notFound" exact component={NotFound} />
-            <Route path="/" component={this.renderApp} />
+            <Route path="/login" component={Login} />
           </Switch>
         </Router>
       </Provider>
