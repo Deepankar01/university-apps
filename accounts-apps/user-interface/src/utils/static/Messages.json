@@ -1,5 +1,7 @@
 {
-    "layout":{
-        "errorMessage": "Something went wrong"
-    }
+  "layout": {
+    "appName": "Student Fees Manager",
+    "errorMessage": "Something went wrong",
+    "universityName": "BBC"
+  }
 }
