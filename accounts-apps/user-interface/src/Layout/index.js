@@ -5,6 +5,7 @@ import { HashRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 import { initializeIcons } from '@uifabric/icons';
+import Header from '../Components/Header';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import Routes from '../routes';
@@ -24,6 +25,7 @@ class Layout extends React.PureComponent {
   renderApp() {
     return (
       <Fabric>
+        <Header />
         <div className="app-layout">
           <NavBar />
           <Routes />
