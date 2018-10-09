@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "BBGC-datasource": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "url": "",
+    "database": "BBGC",
+    "password": "Passw0rd@123",
+    "name": "BBGC-datasource",
+    "user": "root",
+    "connector": "mysql"
   }
 }
