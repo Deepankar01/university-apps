@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { Nav } from 'office-ui-fabric-react/lib/Nav';
 import './style.css';
 
@@ -8,19 +10,16 @@ class NavBar extends PureComponent {
     this.props = props;
     this.state = {};
     this.onClickHandler = this.onClickHandler.bind(this);
-    this.onClickHandler2 = this.onClickHandler2.bind(this);
   }
 
-  /* eslint-disable class-methods-use-this,no-unused-vars */
   onClickHandler(e) {
-    alert('test');
+    e.preventDefault();
+    const { history } = this.props;
+    // eslint-disable-next-line no-console
+    console.log(e.key);
+    history.push('/college');
     return false;
   }
-
-  onClickHandler2(e) {
-    return false;
-  }
-  /* eslint-enable */
 
   render() {
     return (
@@ -31,6 +30,13 @@ class NavBar extends PureComponent {
             {
               links: [
                 {
+                  name: 'Dashboard',
+                  url: '/',
+                  icon: 'ViewDashboard',
+                  onClick: this.onClickHandler,
+                  key: 'key0',
+                },
+                {
                   name: 'Manage BBC',
                   links: [
                     {
@@ -38,21 +44,21 @@ class NavBar extends PureComponent {
                       url: '/college',
                       icon: 'BankSolid',
                       key: 'key1',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                     },
                     {
                       name: 'Courses',
                       url: '/college/course',
                       icon: 'ReadingMode',
                       key: 'key2',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                     },
                     {
                       name: 'Subjects',
                       url: '/college/course/subject',
                       icon: 'Articles',
                       key: 'key3',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                     },
                   ],
                   isExpanded: false,
@@ -62,23 +68,23 @@ class NavBar extends PureComponent {
                   links: [
                     {
                       name: 'Submit Fees',
-                      url: 'http://msn.com',
+                      url: '/fees/new',
                       icon: 'Money',
                       key: 'key4',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                     },
                     {
                       name: 'Edit Fees',
-                      url: 'http://msn.com',
+                      url: '/fees/edit',
                       icon: 'FullWidthEdit',
                       key: 'key5',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                     },
                     {
                       name: 'List',
-                      url: 'http://msn.com',
+                      url: '/fees',
                       key: 'key6',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                       icon: 'BulletedList',
                     },
                   ],
@@ -97,25 +103,25 @@ class NavBar extends PureComponent {
                       name: 'Add new role',
                       url: '/add/role',
                       icon: 'SecurityGroup',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                       key: 'key8',
                     },
                     {
                       name: 'Add new user',
                       url: '/add/user',
                       icon: 'PeopleAdd',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                       key: 'key9',
                     },
                     {
                       name: 'Remove user',
                       url: '/add/user',
                       icon: 'PeopleBlock',
-                      onClick: this.onClickHandler2,
+                      onClick: this.onClickHandler,
                       key: 'key10',
                     },
                   ],
-                  isExpanded: true,
+                  isExpanded: false,
                 },
                 {
                   name: 'Print Fees Receipt',
@@ -124,30 +130,22 @@ class NavBar extends PureComponent {
                   onClick: this.onClickHandler,
                   key: 'key11',
                 },
-                // {
-                //   name: 'Pri',
-                //   url: 'http://cnn.com',
-                //   onClick: this.onClickHandler2,
-                //   icon: 'Edit',
-                //   key: 'key8',
-                // },
-                // {
-                //   name: 'Delete',
-                //   url: 'http://cnn.com',
-                //   onClick: this.onClickHandler2,
-                //   iconProps: { iconName: 'Delete' },
-                //   key: 'key9',
-                // },
               ],
             },
           ]}
+          // onRenderLink={onRenderLink}
           expandedStateText="expanded"
           collapsedStateText="collapsed"
-          selectedKey="key3"
+          initialSelectedKey="key0"
+          // selectedKey="key3"
         />
       </div>
     );
   }
 }
 
-export default NavBar;
+NavBar.propTypes = {
+  history: PropTypes.instanceOf(Object).isRequired,
+};
+
+export default withRouter(NavBar);

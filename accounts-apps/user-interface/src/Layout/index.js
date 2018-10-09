@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 import { initializeIcons } from '@uifabric/icons';

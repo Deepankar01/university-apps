@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Footer = () => <div>Dashboard</div>;
+const Dashboard = () => <div>Dashboard</div>;
 
-export default Footer;
+export default Dashboard;
