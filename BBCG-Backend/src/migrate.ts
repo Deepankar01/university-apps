@@ -1,10 +1,10 @@
-import {BbcApplication} from './application';
+import {BbcgApplication} from './application';
 
 export async function migrate(args: string[]) {
   const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
   console.log('Migrating schemas (%s existing schema)', existingSchema);
 
-  const app = new BbcApplication();
+  const app = new BbcgApplication();
   await app.boot();
   await app.migrateSchema({existingSchema});
 

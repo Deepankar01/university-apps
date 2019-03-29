@@ -58,3 +58,4 @@ typings/
 .env
 /accounts-apps/mysql-database
 
+.DS_Store

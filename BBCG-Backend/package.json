@@ -1,7 +1,7 @@
 {
-  "name": "bbc",
+  "name": "bbcg-backend",
   "version": "1.0.0",
-  "description": "backend server for bbc group of colleges",
+  "description": "Backend service for BBC Group of Colleges",
   "keywords": [
     "loopback-application",
     "loopback"
@@ -26,8 +26,8 @@
     "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
     "posttest": "npm run lint",
     "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
-    "docker:build": "docker build -t bbc .",
-    "docker:run": "docker run -p 3000:3000 -d bbc",
+    "docker:build": "docker build -t bbcg-backend .",
+    "docker:run": "docker run -p 3000:3000 -d bbcg-backend",
     "migrate": "node ./dist/migrate",
     "prestart": "npm run build",
     "start": "node .",

@@ -1,10 +1,10 @@
-import {BbcApplication} from './application';
+import {BbcgApplication} from './application';
 import {ApplicationConfig} from '@loopback/core';
 
-export {BbcApplication};
+export {BbcgApplication};
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new BbcApplication(options);
+  const app = new BbcgApplication(options);
   await app.boot();
   await app.start();
 

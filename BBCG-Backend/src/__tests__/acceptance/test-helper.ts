@@ -1,4 +1,4 @@
-import {BbcApplication} from '../..';
+import {BbcgApplication} from '../..';
 import {
   createRestAppClient,
   givenHttpServerConfig,
@@ -14,7 +14,7 @@ export async function setupApplication(): Promise<AppWithClient> {
     // port: +process.env.PORT,
   });
 
-  const app = new BbcApplication({
+  const app = new BbcgApplication({
     rest: restConfig,
   });
 
@@ -27,6 +27,6 @@ export async function setupApplication(): Promise<AppWithClient> {
 }
 
 export interface AppWithClient {
-  app: BbcApplication;
+  app: BbcgApplication;
   client: Client;
 }
