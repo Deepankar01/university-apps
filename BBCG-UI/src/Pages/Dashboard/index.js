@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import Styled from 'styled-components';
 import FeesPredictiveWidget from '../../Components/FeesPredictiveWidget';
+import PageHeading from '../../Components/HOC/PageHeading';
 
 const DashBoardWidgetContainer = Styled.div`
     display: flex;
@@ -21,16 +22,18 @@ class Dashboard extends PureComponent {
 
   render() {
     return (
-      <DashBoardWidgetContainer>
-        <FeesPredictiveWidget />
-        <FeesPredictiveWidget />
-        <FeesPredictiveWidget />
-        <FeesPredictiveWidget />
-        <FeesPredictiveWidget />
-        <FeesPredictiveWidget />
-      </DashBoardWidgetContainer>
+      <Fragment>
+        <DashBoardWidgetContainer>
+          <FeesPredictiveWidget />
+          <FeesPredictiveWidget />
+          <FeesPredictiveWidget />
+          <FeesPredictiveWidget />
+          <FeesPredictiveWidget />
+          <FeesPredictiveWidget />
+        </DashBoardWidgetContainer>
+      </Fragment>
     );
   }
 }
 
-export default Dashboard;
+export default PageHeading(Dashboard, 'Dashboard');
