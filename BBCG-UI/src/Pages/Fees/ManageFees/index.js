@@ -1,5 +1,6 @@
 import React from 'react';
+import PageHeading from '../../../Components/HOC/PageHeading';
 
-const ManageFees = () => <div>Manage Fees</div>;
+const ManageFees = () => <div />;
 
-export default ManageFees;
+export default PageHeading(ManageFees, 'Manage Fees');

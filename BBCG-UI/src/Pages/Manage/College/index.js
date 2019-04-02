@@ -1,5 +1,6 @@
 import React from 'react';
+import PageHeading from '../../../Components/HOC/PageHeading';
 
-const College = () => <div>College</div>;
+const College = () => <div />;
 
-export default College;
+export default PageHeading(College, 'College');

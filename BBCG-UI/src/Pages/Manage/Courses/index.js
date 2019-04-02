@@ -1,5 +1,6 @@
 import React from 'react';
+import PageHeading from '../../../Components/HOC/PageHeading';
 
-const Courses = () => <div>Courses</div>;
+const Courses = () => <div />;
 
-export default Courses;
+export default PageHeading(Courses, 'Courses');

@@ -1,5 +1,9 @@
 import React from 'react';
+import PageHeading from '../../../Components/HOC/PageHeading';
 
-const ManageRolesPermissions = () => <div>Manage Roles and Permissions</div>;
+const ManageRolesPermissions = () => <div />;
 
-export default ManageRolesPermissions;
+export default PageHeading(
+  ManageRolesPermissions,
+  'Manage Roles and Permissions',
+);

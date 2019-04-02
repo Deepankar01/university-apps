@@ -1,5 +1,6 @@
 import React from 'react';
+import PageHeading from '../../../Components/HOC/PageHeading';
 
-const ManageUser = () => <div>Manage User</div>;
+const ManageUser = () => <div />;
 
-export default ManageUser;
+export default PageHeading(ManageUser, 'Manage User');

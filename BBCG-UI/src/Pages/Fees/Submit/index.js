@@ -1,5 +1,6 @@
 import React from 'react';
+import PageHeading from '../../../Components/HOC/PageHeading';
 
-const SubmitFees = () => <div>Submit Fees</div>;
+const SubmitFees = () => <div />;
 
-export default SubmitFees;
+export default PageHeading(SubmitFees, 'Submit Fees');
