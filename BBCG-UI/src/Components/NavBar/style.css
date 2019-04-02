@@ -2,3 +2,11 @@
   border-right: 1px solid #eee;
   height: 90vh;
 }
+.navbar a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.navbar a:focus {
+  outline: none;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
 
-const EditFees = () => <div>Manage Fees</div>;
+const ManageFees = () => <div>Manage Fees</div>;
 
-export default EditFees;
+export default ManageFees;

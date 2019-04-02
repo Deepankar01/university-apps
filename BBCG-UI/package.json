@@ -9,7 +9,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "normalize.css": "^8.0.0",
-    "office-ui-fabric-react": "^6.74.1",
+    "office-ui-fabric-react": "^6.164.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
