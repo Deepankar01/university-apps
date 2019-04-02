@@ -85,7 +85,7 @@ NavBar.defaultProps = {
               key: 'key3',
             },
           ],
-          isExpanded: false,
+          isExpanded: true,
         },
         {
           name: 'Fees',
