@@ -3,11 +3,11 @@ import Styled from 'styled-components';
 import FeesPredictiveWidget from '../../Components/FeesPredictiveWidget';
 
 const DashBoardWidgetContainer = Styled.div`
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
-    grid-column-gap: 2rem;
-    grid-row-gap: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    >*{
+        margin: 10px;
+    }
 `;
 
 class Dashboard extends PureComponent {
@@ -20,6 +20,8 @@ class Dashboard extends PureComponent {
   render() {
     return (
       <DashBoardWidgetContainer>
+        <FeesPredictiveWidget />
+        <FeesPredictiveWidget />
         <FeesPredictiveWidget />
         <FeesPredictiveWidget />
         <FeesPredictiveWidget />
