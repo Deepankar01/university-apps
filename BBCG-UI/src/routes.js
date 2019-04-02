@@ -4,13 +4,25 @@ import {
 } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
 import Error from './Layout/Error';
-import College from './Pages/College';
+import College from './Pages/Manage/College';
+import Courses from './Pages/Manage/Courses';
+import Subjects from './Pages/Manage/Subjects';
+import Semesters from './Pages/Manage/Semesters';
+import SubmitFees from './Pages/Fees/Submit';
+import ApproveRejectFees from './Pages/Fees/ApproveReject';
+import ManageFees from './Pages/Fees/ManageFees';
 
 const Routes = () => (
   <Error>
     <Switch>
       <Route path="/" exact component={Dashboard} />
-      <Route path="/college" component={College} />
+      <Route path="/colleges" component={College} />
+      <Route path="/courses" component={Courses} />
+      <Route path="/subjects" component={Subjects} />
+      <Route path="/semesters" component={Semesters} />
+      <Route exact path="/fees" component={ManageFees} />
+      <Route path="/fees/submit" component={SubmitFees} />
+      <Route path="/fees/approve" component={ApproveRejectFees} />
       <Route render={() => <Redirect to="/notFound" />} />
     </Switch>
   </Error>

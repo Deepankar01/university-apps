@@ -1,5 +1,5 @@
 import React from 'react';
 
-const College = () => <div>Dashboard</div>;
+const College = () => <div>College</div>;
 
 export default College;
