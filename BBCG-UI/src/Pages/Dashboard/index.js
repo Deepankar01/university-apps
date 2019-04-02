@@ -5,8 +5,10 @@ import FeesPredictiveWidget from '../../Components/FeesPredictiveWidget';
 const DashBoardWidgetContainer = Styled.div`
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
     >*{
         margin: 10px;
+        height: 40%;
     }
 `;
 
