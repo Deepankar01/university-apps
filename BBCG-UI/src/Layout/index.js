@@ -43,9 +43,9 @@ class Layout extends React.PureComponent {
       <Provider store={store}>
         <Router>
           <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/notFound" component={NotFound} />
             <Route path="/" component={this.renderApp} />
-            <Route path="/notFound" component={NotFound} />
-            <Route path="/login" component={Login} />
           </Switch>
         </Router>
       </Provider>
