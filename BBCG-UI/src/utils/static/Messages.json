@@ -2,6 +2,11 @@
   "layout": {
     "appName": "BBGC Fees Manager",
     "errorMessage": "Something went wrong",
-    "universityName": "Banke Bihari Group of Colleges"
+    "universityName": "BB Group of Colleges"
+  },
+  "login": {
+    "username": "Username",
+    "password": "Password",
+    "loginText": "Login"
   }
 }

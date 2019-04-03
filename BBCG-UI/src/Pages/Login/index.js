@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
+import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import PropTypes from 'prop-types';
 import { getMessage } from '../../utils';
 import './style.css';
@@ -13,24 +15,33 @@ class Login extends PureComponent {
 
   render() {
     const { staticContent } = this.props;
+    const { appName, loginScreenLabels } = staticContent;
     return (
       <Fabric>
         <div className="login">
           <div className="form">
             <form onSubmit={this.authenticate}>
               <div>
-                <input type="text" />
+                <TextField
+                  label={loginScreenLabels.username}
+                  type="text"
+                  required
+                />
               </div>
               <div>
-                <input type="text" />
+                <TextField
+                  label={loginScreenLabels.password}
+                  type="text"
+                  required
+                />
               </div>
               <div>
-                <input type="submit" />
+                <DefaultButton text={loginScreenLabels.loginText} />
               </div>
             </form>
           </div>
           <div className="pane">
-            <h1>{staticContent.appName}</h1>
+            <h1>{appName}</h1>
           </div>
         </div>
       </Fabric>
@@ -40,13 +51,15 @@ class Login extends PureComponent {
 
 Login.propTypes = {
   staticContent: PropTypes.shape({
-    staticContent: PropTypes.string,
+    appName: PropTypes.string,
+    loginScreenLabels: PropTypes.instanceOf(Object),
   }),
 };
 
 Login.defaultProps = {
   staticContent: {
     appName: getMessage('layout', 'universityName'),
+    loginScreenLabels: getMessage('login'),
   },
 };
 
